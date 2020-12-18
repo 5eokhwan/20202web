@@ -1,0 +1,244 @@
+body {
+  margin: 0;
+  color: black;
+  background-color: antiquewhite;
+}
+.fixed_img {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.boundery_for_cube {
+  height: 100px;
+}
+a {
+  text-decoration: none;
+  margin-top: 5px;
+  font-size: 12px;
+  line-height: 12px;
+}
+dt {
+  font-weight: bold;
+}
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  height: 100%;
+}
+.container div {
+  box-sizing: border-box;
+}
+.header {
+  background-color: #9dc3e6;
+  width: 50%;
+  border-right: 1px solid white;
+}
+.header .profile_img {
+  border-radius: 50%;
+  display: block;
+  margin: 50px auto 0;
+  width: 150px;
+  height: 150px;
+}
+.header .name {
+  text-align: center;
+  margin: 10px 0 10px 0;
+  font-size: 19px;
+  color: black;
+}
+a {
+  text-align: center;
+}
+.content_box {
+  width: 50%;
+  padding: 30px 30px;
+  background-color: #bdd7ee;
+}
+table {
+  border-collapse: collapse;
+}
+#hak {
+  margin: 10px;
+}
+.cube {
+  animation: rotate 5s linear infinite;
+  margin: auto;
+  transform-style: preserve-3d;
+  height: 100px;
+  width: 100px;
+}
+
+.cube .face {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.cube .front {
+  background: purple;
+  transform: translateZ(50px);
+}
+
+.cube .back {
+  background: purple;
+  transform: translateZ(-50px);
+}
+
+.cube .left {
+  background: purple;
+  transform: translateX(-50px) rotateY(90deg);
+}
+
+.cube .right {
+  background: purple;
+  transform: translateX(50px) rotateY(90deg);
+}
+
+.cube .top {
+  background: purple;
+  transform: translateY(-50px) rotateX(90deg);
+}
+
+.cube .bottom {
+  background: purple;
+  transform: translateY(50px) rotateX(90deg);
+}
+@keyframes rotate {
+  0% {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
+}
+
+.cube2 {
+  width: 300px;
+  height: 200px;
+  border: 1px solid #ccc;
+  margin: auto;
+  perspective: 400px;
+}
+
+.box {
+  width: 300px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-50px);
+  transition: transform 1s;
+}
+
+.box:hover {
+  animation: spin 5s infinite;
+}
+.face {
+  position: absolute;
+  border: 2px solid black;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  backface-visibility: visible;
+  opacity: 0.9;
+}
+
+.cube2 .front,
+.cube2 .back {
+  width: 300px;
+  height: 200px;
+  line-height: 200px;
+}
+
+.cube2 .right,
+.cube2 .left {
+  width: 300px;
+  height: 200px;
+  left: 100px;
+  line-height: 200px;
+}
+
+.cube2 .top,
+.cube2 .bottom {
+  width: 300px;
+  height: 300px;
+  top: 50px;
+  line-height: 100px;
+}
+
+.cube2 .front {
+  background-image: url("./melon1.jpg");
+  background-size: cover;
+  transform: rotateY(0deg) translateZ(150px);
+}
+.cube2 .back {
+  background-image: url("./melon2.jpg");
+  background-size: cover;
+  transform: rotateY(180deg) translateZ(150px);
+}
+.cube2 .right {
+  background-image: url("./melon3.jpeg");
+  background-size: cover;
+  transform: rotateY(90deg) translateZ(50px);
+}
+.cube2 .left {
+  background-image: url("./melon4.jpg");
+  background-size: cover;
+  transform: rotateY(-90deg) translateZ(250px);
+}
+.cube2 .top {
+  background: gray;
+  background-size: cover;
+  transform: rotateX(90deg) translateZ(200px);
+}
+.cube2 .bottom {
+  background: gray;
+  background-size: cover;
+  transform: rotateX(-90deg) translateZ(0px);
+}
+
+@keyframes spin {
+  0% {
+    transform: translateZ(-50px) rotateY(0deg);
+  }
+  100% {
+    transform: translateZ(-50px) rotateY(360deg);
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    height: auto;
+    width: auto;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    background: none;
+    background-color: #9dc3e6;
+  }
+  .header .name {
+    margin-left: 10px;
+  }
+  a {
+    margin-left: 10px;
+  }
+  .content_box {
+    width: 100%;
+  }
+  .header .profile_img {
+    width: 70px;
+    height: 70px;
+    margin: 0 0 0 20px;
+  }
+  .cube,
+  .cube2 {
+    display: none;
+  }
+}
